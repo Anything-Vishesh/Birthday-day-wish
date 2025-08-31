@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #playButton {
+      position: relative;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 10000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio Element -->
+  <audio id="birthday-audio" src="images/song.mp3" loop></audio>
+
+  <!-- Play Button -->
+  <button id="playButton">🎶 Tap to Play Music</button>
+
+  <!-- Birthday Cards and Content -->
+  <div class="drag-container">
+    <div class="drag-item">
+      <div class="paper heart"> Happy Birthday ❤</div>
+    </div>
+    <div class="drag-item">
+      <div class="paper image">
+        <p>Akansha</p>
+        <img src="images/1.jpeg" />
+      </div>
+    </div>
+    <div class="drag-item">
+      <div class="paper image">
+        <p>Our memories 🫶</p>
+        <img src="images/2.jpeg" />
+      </div>
+    </div>
+    <div class="flex">
+      <div class="drag-item">
+        <div class="paper image">
+          <p>Always smiling 😄</p>
+        </div>
+      </div>
+      <div class="drag-item">
+        <div class="paper">
+          <p class="p1">Happy Birthday 🎉</p>
+          <p class="p2">You're a blessing in my life. Hope today is as wonderful as you are! 💖</p>
+        </div>
+      </div>
+      <div class="drag-item">
+        <div class="paper image">
+          <p>Here’s your birthday cake 🎂</p>
+          <img src="images/cake.gif"/>
+        </div>
+      </div>
+      <div class="drag-item">
+        <div class="paper">
+          <p class="p1">Thank You</p>
+          <p class="p2">For being YOU 💕</p>
+        </div>
+      </div>
+      <div class="drag-item">
+        <div class="paper">
+          <p class="p1">You're my person ✨</p>
+          <p class="p2">Jo thodi Ajib hai but cute hai 🥰</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script to handle music play -->
+  <script>
+    const audio = document.getElementById('birthday-audio');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', () => {
+      audio.play().then(() => {
+        playButton.style.display = 'none'; // Hide button after play
+      }).catch(err => {
+        alert('Please interact with the page to enable music.');
+      });
+    });
+  </script>
+
+</body>
+</html>

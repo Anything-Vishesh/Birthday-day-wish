@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #fceabb, #f8b500);
+  font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.drag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.drag-item {
+  cursor: grab;
+  transition: transform 0.3s ease;
+}
+
+.drag-item:hover {
+  transform: scale(1.03);
+}
+
+.paper {
+  width: 250px;
+  height: auto;
+  padding: 20px;
+  background: #fffefb;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px dashed #ffc107;
+  position: relative;
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+.paper.heart {
+  background-color: #ffe4e1;
+  font-size: 30px;
+  text-align: center;
+  color: crimson;
+}
+
+.paper.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.p1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff4081;
+  font-family: 'Sacramento', cursive;
+  margin: 10px 0 5px;
+}
+
+.p2 {
+  font-size: 16px;
+  color: #444;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Float animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Confetti canvas */
+canvas {
+  pointer-events: none;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999;
+}
